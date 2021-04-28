@@ -6,7 +6,11 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Component
+@Getter @Setter
 public class UserDb {
 
 	public List<User> users = new ArrayList<>();
