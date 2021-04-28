@@ -2,7 +2,7 @@ package com.assignment.userservice;
 
 import org.junit.Test;
 
-public class ExamQuestionsSpec extends UserserviceApplicationTests {
+public class ExamQuestionsTests extends UserserviceApplicationTests {
 
 	
 	@Test
