@@ -13,14 +13,14 @@ public class UserDb {
 	
 	public List<User> fetchAllUsersWithAtleastSalAndAge(int salary, int age){
 		List<User> filteredUsers = users.stream().
-				filter(user -> user.occupation.salary > salary && user.age >= age).
+				filter(user -> user.getOccupation().getSalary() > salary && user.getAge() >= age).
 				collect(Collectors.toList());
 		return filteredUsers;
 	}
 	
 	public List<User> fetchUsersByName(String name){
 		List<User> filteredUsers = users.stream().
-				filter(user -> user.name.equals(name)).
+				filter(user -> user.getName().equals(name)).
 				collect(Collectors.toList());
 		return filteredUsers;
 	}
@@ -31,12 +31,12 @@ public class UserDb {
 	
 	public void addUser(String name, int age, String title, int salary){
 		User user = new User();
-		user.age = age;
-		user.name = name;
+		user.setAge(age);
+		user.setName(name);
 		Occupation occupation = new Occupation();
-		occupation.salary = salary;
-		occupation.title = title;
-		user.occupation = occupation;
+		occupation.setSalary(salary);
+		occupation.setTitle(title);
+		user.setOccupation(occupation);
 		users.add(user);
 	}
 	
